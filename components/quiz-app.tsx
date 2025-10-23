@@ -82,8 +82,8 @@ export default function QuizApp() {
                 questionNumber={currentQuestionIndex + 1}
                 totalQuestions={selectedQuestions.length}
                 onAnswer={handleAnswer}
-                onFinish={finishQuiz}   // ← ahora sí
-                onExit={exitQuiz}       // ← ahora sí
+                onFinish={finishQuiz}
+                onExit={exitQuiz}
             />
         )}
 

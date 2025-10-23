@@ -12,8 +12,8 @@ interface QuizQuestionProps {
   questionNumber: number
   totalQuestions: number
   onAnswer: (answerIndex: number) => void
-  onFinish?: () => void        // ← ya lo tenías
-  onExit?: () => void          // ← FALTABA: lo añadimos
+  onFinish?: () => void
+  onExit?: () => void
 }
 
 export default function QuizQuestion({
@@ -33,7 +33,6 @@ export default function QuizQuestion({
     setSelectedAnswer(index)
     setShowFeedback(true)
 
-    // Mostrar feedback 1.5s y luego notificar al padre
     setTimeout(() => {
       onAnswer(index)
       setSelectedAnswer(null)
@@ -80,7 +79,7 @@ export default function QuizQuestion({
                               showIncorrect ? "destructive" :
                                   isSelected ? "secondary" : "outline"
                         }
-                        className={`w-full justify-start text-left h-auto py-4 px-4 text-base transition-all ${showFeedback ? "pointer-events-none" : ""}`}
+                        className={`w-full justify-start text-left h-auto py-4 px-4 text-base transition-all whitespace-normal break-words [overflow-wrap:anywhere] ${showFeedback ? "pointer-events-none" : ""}`}
                         onClick={() => handleSelectAnswer(index)}
                         disabled={showFeedback}
                     >
