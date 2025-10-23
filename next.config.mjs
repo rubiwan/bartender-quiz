@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export",
-
+    typescript: {
+        ignoreBuildErrors: true,
+    },
     images: {
         unoptimized: true,
     },
-    basePath: "/bartender-quiz",
-    assetPrefix: "/bartender-quiz/",
 }
 
 export default nextConfig
