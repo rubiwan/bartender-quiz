@@ -5,10 +5,11 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "export": "next export",
     "lint": "eslint .",
     "start": "next start",
-    "build:pages": "NEXT_PUBLIC_BASE_PATH=/bartender-quiz next build && next export",
-    "deploy": "npm run build:pages && node -e \"require('fs').writeFileSync('out/.nojekyll','')\" && gh-pages -d out -b gh-pages -m \"Deploy $(date -u +'%Y-%m-%dT%H:%M:%SZ')\"",
+    "build:pages": "next build && next export",
+    "deploy": "npm run build:pages && node -e \"require('fs').writeFileSync('out/.nojekyll','')\" && gh-pages -d out -b gh-pages -m \"Deploy\"",
     "deploy:clean": "gh-pages-clean"
   },
   "dependencies": {

@@ -1,15 +1,12 @@
-// next.config.mjs
 /** @type {import('next').NextConfig} */
-
-const repoBasePath = process.env.NEXT_PUBLIC_BASE_PATH || "bartender-quiz"
-
 const nextConfig = {
-  output: "export",
-  images: { unoptimized: true },
+    output: "export",
 
-  // Necesario SOLO si publicas como Project Page
-  basePath: repoBasePath || undefined,
-  assetPrefix: repoBasePath ? `${repoBasePath}/` : undefined,
+    images: {
+        unoptimized: true,
+    },
+    basePath: "/bartender-quiz",
+    assetPrefix: "/bartender-quiz/",
 }
 
 export default nextConfig
