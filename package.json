@@ -5,10 +5,10 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "export": "next export",
+
     "lint": "eslint .",
     "start": "next start",
-    "build:pages": "next build && next export",
+    "build:pages": "next build",
     "deploy": "npm run build:pages && node -e \"require('fs').writeFileSync('out/.nojekyll','')\" && gh-pages -d out -b gh-pages -m \"Deploy\"",
     "deploy:clean": "gh-pages-clean"
   },
