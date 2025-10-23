@@ -38,8 +38,6 @@ export default function QuizQuestion({
       onAnswer(index)
       setSelectedAnswer(null)
       setShowFeedback(false)
-      // Importante: NO llamamos a onFinish aquí. El padre decide
-      // si pasa a results al contestar la última pregunta.
     }, 1500)
   }
 
@@ -47,8 +45,7 @@ export default function QuizQuestion({
   const optionLabels = ["A", "B", "C", "D"]
 
   return (
-      <div className="min-h-screen flex flex-col">
-        {/* Header with progress */}
+      <div className="min-h-screen flex flex-col overflow-x-hidden">
         <div className="bg-card border-b sticky top-0 z-10">
           <div className="max-w-2xl mx-auto px-4 py-4 space-y-3">
             <div className="flex items-center justify-between text-sm">
@@ -61,7 +58,7 @@ export default function QuizQuestion({
           </div>
         </div>
 
-        {/* Question content */}
+        {/* Preguntas */}
         <div className="flex-1 flex items-center justify-center p-4 py-8">
           <Card className="w-full max-w-2xl p-6 md:p-8 space-y-8">
             <h2 className="text-xl md:text-2xl font-semibold text-balance leading-relaxed">
@@ -87,7 +84,7 @@ export default function QuizQuestion({
                         onClick={() => handleSelectAnswer(index)}
                         disabled={showFeedback}
                     >
-                  <span className="flex items-center gap-3 w-full">
+                  <span className="flex items-center gap-3 w-full min-w-0">
                     <span
                         className={`flex items-center justify-center w-8 h-8 rounded-full shrink-0 font-semibold ${
                             showCorrect
@@ -101,7 +98,7 @@ export default function QuizQuestion({
                     >
                       {optionLabels[index]}
                     </span>
-                    <span className="flex-1 text-pretty leading-relaxed">{option}</span>
+                    <span className="flex-1 min-w-0 leading-relaxed text-pretty break-words [overflow-wrap:anywhere] hyphens-auto">{option}</span>
                     {showCorrect && <CheckCircle2 className="w-6 h-6 shrink-0" />}
                     {showIncorrect && <XCircle className="w-6 h-6 shrink-0" />}
                   </span>
