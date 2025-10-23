@@ -1,7 +1,7 @@
 // next.config.mjs
 /** @type {import('next').NextConfig} */
 
-const repoBasePath = process.env.NEXT_PUBLIC_BASE_PATH || "bartender-quiz" // ej: "/bartender-quiz"
+const repoBasePath = process.env.NEXT_PUBLIC_BASE_PATH || "bartender-quiz"
 
 const nextConfig = {
   output: "export",
